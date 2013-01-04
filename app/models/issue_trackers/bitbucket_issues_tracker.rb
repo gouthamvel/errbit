@@ -24,7 +24,7 @@ class IssueTrackers::BitbucketIssuesTracker < IssueTracker
 
   def create_issue(problem, reported_by = nil)
     bitbucket = BitBucket.new :basic_auth => "#{api_token}:#{project_id}"
-
+    logger.info "Pushing error to bitbucket"
     begin
       issue = bitbucket.issues.create api_token, repo_name.split('/')[1], :title => issue_title(problem), :content => body_template.result(binding), :priority => 'critical'
       problem.update_attributes(
@@ -32,6 +32,7 @@ class IssueTrackers::BitbucketIssuesTracker < IssueTracker
         :issue_type => Label
       )
     rescue BitBucket::Error::Unauthorized
+      logger.error  "Could not authenticate with BitBucket. Please check your username and password."
       raise IssueTrackers::AuthenticationError, "Could not authenticate with BitBucket. Please check your username and password."
     end
   end
