@@ -74,13 +74,13 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.6'
   gem 'webmock', :require => false
   unless ENV["CI"]
-    gem 'ruby-debug', :platform => :mri_18
-    gem 'debugger', :platform => :mri_19
     gem 'pry-rails'
   end
 #  gem 'rpm_contrib'
 #  gem 'newrelic_rpm'
   gem 'capistrano'
+  gem "rvm-capistrano"
+  
 end
 
 gem 'foreman', :group => :development
