@@ -13,3 +13,5 @@ config/newrelic.yml
 *~
 *.rbc
 .DS_Store
+vendor
+errbit.sublime-*

@@ -7,7 +7,7 @@ class NotificationServices::GtalkService < NotificationService
       }],
       [:api_token, {
           :placeholder => "password",
-          :label       => "Password"
+          :label       => :password
       }],
       [:room_id, {
           :placeholder => "touser@example.com",
