@@ -15,4 +15,8 @@ config/newrelic.yml
 .DS_Store
 vendor
 errbit.sublime-*
-.elasticbeanstalk/
+*.rbx
+bin
+bundle
+coverage
+*#
