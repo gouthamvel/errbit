@@ -20,3 +20,4 @@ bin
 bundle
 coverage
 *#
+config/secret_token.yml

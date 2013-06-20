@@ -100,7 +100,7 @@ group :development do
   gem 'binding_of_caller', :platform => :ruby_19
   gem 'meta_request'     , :platform => :ruby_19
   gem 'foreman'
-
+  gem 'mina'
   # Use thin for development
   gem 'thin', :group => :development, :platform => :ruby
 
